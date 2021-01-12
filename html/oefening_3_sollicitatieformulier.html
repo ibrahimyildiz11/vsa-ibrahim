@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Oefening_3</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Sollicitatie formulier</h1>
+        <form action="" method="POST">
+            <div>
+                <label><h3>Aanspreektitel</h3></label>
+                <input type="radio" id="geslacht_1" name="geslacht" value="Meneer">
+                <label for="geslacht_1">Meneer</label> <br>
+                <input type="radio" id="gelecht_2" name="geslacht" value="Mevrouw">
+                <label for="gelecht_2">Mevrouw</label> <br>
+            </div>
+            <br>    
+            <div>
+                <label for="voornaam">Voornaam</label> <br>
+                <input type="text" id="voornaam" required placeholder="Voer een voornaam in">
+            </div>
+            <div>
+                <label for="naam">Naam</label> <br>
+                <input type="text" id="naam" required placeholder="Voer een naam in">
+            </div>
+            <div>
+                <label for="adres">Adres</label> <br>
+                <input type="text" id="adres" required placeholder="Voer een adres in">
+            </div>
+            <div>
+                <label for="plaats">Plaats</label> <br>
+                <input type="text" id="plaats" required placeholder="Voer een plaats in">
+            </div>
+            <div>
+                <label for="land">Land</label> <br>
+                <select name="land" id="land">
+                    <option value="Belgie">Belgie</option>
+                    <option selected value="Nederland">Nederland</option>
+                </select>
+            </div>
+            <hr>
+            <div>
+                <label for="email">E-mail</label> <br>
+                <input type="email" id="email" required placeholder="Voer een e-mail in">
+            </div>
+            <div>
+                <label for="telefoon">Telefoon</label> <br>
+                <input type="tel" id="telefoon" required placeholder="Voer een telefoonnummer in">
+            </div>
+            <hr>
+            <div>
+                <label for="cv">CV</label> <br>
+                <input type="file" id="cv" name="cv"> <br>
+
+                <label for="Motivatie">Motivatie</label> <br>
+                <textarea name="Motivatie" id="Motivatie" cols="30" rows="10"></textarea>
+
+                <hr>
+            </div>
+            <div>
+                <input type="submit" value="Verstuur">
+            </div>
+
+        </form>
+
+    </body>
+</html>
