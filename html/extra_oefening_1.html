@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extra_oefening_1</title>
+</head>
+<body>
+    <h1><strong>Formulieren</strong></h1>
+    <form>
+        <fieldset>
+          <legend>Login-gegevens</legend>
+          <label for="naam"><li>Naam</li></label>  
+          <input type="text" id="naam" name="naam">
+          
+          <label for="password"><li>Password</li></label>  
+          <input type="password" id="password" name="password">
+          
+        </fieldset>
+
+        <fieldset>
+            <legend>Bestel-gegevens</legend>
+            <label><li>Selecteer je magazine:</li></label>
+            <label for="bestel_humo">HUMO</label>
+            <input type="checkbox" id="bestel_humo" value="HUMO" name="magazine" />
+            <label for="bestel_trends">Trends</label>
+            <input type="checkbox" id="bestel_trends" value="Trends" name="magazine" />
+            <label for="bestel_libelle">Libelle</label>
+            <input type="checkbox" id="bestel_libelle" value="Libelle" name="magazine" />
+
+            <label><li>Met welke webbrowser surf je:</li></label>
+            <label for="google_chrome">Google Chrome</label>
+            <input type="radio" id="google_chrome" value="google_chrome" name="webbrowser">
+            <label for="firefox">Firefox</label>
+            <input type="radio" id="firefox" value="firefox" name="webbrowser">
+            <label for="opera">Opera</label>
+            <input type="radio" id="opera" value="opera" name="webbrowser">   
+        </fieldset>
+
+        <fieldset>
+            <legend>Extra informatie</legend>
+            <label for="verzending"><li>Verzending:</li></label>
+            <select name="verzending" id="verzending">
+                <option value="dhl">DHL</option>
+                <option value="post">Post</option>
+                <option value="paardenkaar">Paard en kar</option>
+            </select>
+
+            <label for="vragen"><li>Heb je vragen?</li></label>
+            <textarea name="vragen" id="vragen" cols="30" rows="10" placeholder="Vul hier je vraag in..."></textarea>
+
+          </fieldset>
+          <input type="submit" value="Bestellen" >
+          <input type="button" value="Wissen" >
+    </form>
+    
+</body>
+</html>
