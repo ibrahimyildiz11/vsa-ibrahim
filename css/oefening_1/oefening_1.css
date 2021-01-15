@@ -1,0 +1,42 @@
+body {
+    
+    width: 80%;
+    margin-left: 100px;
+    background-color: rgb(115, 206, 201);
+ }
+
+
+header {
+    color: white;
+    border-radius: 0.5cm;
+    border-color: #FC0;
+    border-style: dashed;
+    border-width: 5px;
+}
+
+#main_p {
+    border-width: 5px;
+    width: 100%;
+    background-color: #FC0;
+}
+#eerste_p {
+    background-color: aliceblue;
+
+}
+#tweede_p {
+    background-color: aliceblue;
+
+}
+#derde_p {
+    margin: 0 auto;
+    background-color: aliceblue;
+    width: 30%;
+
+}
+strong {
+    font-size: 50px;
+}
+span {
+    color: red;
+}
+
