@@ -1,0 +1,32 @@
+.rij {
+    font-size: 0;
+  }
+  
+  article { 
+    font-size: 12px;
+    display: inline;
+  }
+  div.box{
+    width: 40%;
+    height: 40%;
+    border: 1px solid black;
+    padding: 20px;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  p{
+    margin: 0%;
+  }
+  h2 {
+    margin: 0px;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  h2 strong {
+    font-size: 30px;
+  }
+  img {
+    padding: 20px 0px;
+    width: 100%;
+  }
