@@ -1,0 +1,39 @@
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(82, 82, 97);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .flex-container > div {
+    
+    width: 325px;
+    height: 600px;
+    background-color: #f1f1f1;
+  }
+  header {
+    width: 1300px;
+    height: 100px; 
+
+    background: #1abc9c;
+  }
+  footer {
+    
+    width: 1300px;
+    height: 100px;
+    
+    text-align: center;
+    background: #73d134;
+  }
+  #main {
+      background-color: rgb(228, 228, 240);
+      width: 650px;
+  }
+  #nav {
+      background-color: rgb(44, 100, 211);
+  }
+  #aside {
+      background-color: darkturquoise;
+  }
