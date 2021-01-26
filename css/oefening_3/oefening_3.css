@@ -16,15 +16,12 @@
   header {
     width: 1300px;
     height: 100px; 
-
     background: #1abc9c;
   }
   footer {
     
     width: 1300px;
     height: 100px;
-    
-    text-align: center;
     background: #73d134;
   }
   #main {
