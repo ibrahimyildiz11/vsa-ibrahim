@@ -23,9 +23,11 @@ else if (getal >30) {
     bericht = "Het is een getal boven 30";
 } */
 
+// feedback: deze is goed, ik zou hier wel meteen de variabele "berichtje" een waarde geven
 if (getal<1) {
     resultaat = "situatie_1";
 }
+// feedback: in binnen het "else" onderdeel kan de switch komen om de voorwaardes te controleren
 
 else if (getal >= 1 && getal <= 10) {
     resultaat = "situatie_2";
@@ -41,6 +43,7 @@ else if (getal >30) {
     resultaat = "situatie_5";
 } 
 
+// feedback: probeer switch (true) { }
 switch (resultaat) {
     case 'situatie_1':
         berichtje = "Getal moet groter zijn of gelijk aan 1";
