@@ -1,3 +1,4 @@
+// Feedback: goed gedaan Ibrahim!
 //invoer
 let getal = parseInt(prompt("Geef een getal: "));
 
