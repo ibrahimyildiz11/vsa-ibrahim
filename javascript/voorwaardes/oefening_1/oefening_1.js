@@ -1,7 +1,9 @@
+// Feedback: mooi resultaat 
 //invoer
 let getallen = prompt("Geef twee getallen gescheiden door een ','");
 
 //verwerking
+// feedback: "nummers" is niet slecht, "twee_getallen" is misschien nog iets duidelijker?
 nummers = getallen.split(",");
 
 let getal_1 = nummers[0];
