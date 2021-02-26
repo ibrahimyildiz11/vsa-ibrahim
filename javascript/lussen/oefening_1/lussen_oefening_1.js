@@ -1,5 +1,7 @@
+// Feedback: Mooi Ibrahim!
 let woord = prompt("Geef een woord");
 
+// "index" is misschien "afteller"?
 let index = woord.length-1;
 let omgekeerd  = ""
 
