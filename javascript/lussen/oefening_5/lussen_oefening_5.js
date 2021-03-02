@@ -19,6 +19,7 @@ getallen_tabel.forEach(function(lijn){
 })
 
 // uitvoer
+// feedack: het is dynamisch maar nog steeds is 3 niet dynamisch... wat met meer rijen?
 console.log("┌" + koppelteken.repeat(uitvoer.length/3-3) + "┐");
 console.log(uitvoer);
 console.log("└" + koppelteken.repeat(uitvoer.length/3-3) + "┘");
