@@ -1,33 +1,18 @@
 
 let priemgetal_lijst = [];
 
-
-let teller = 2;
 let aantal_te_tonen = 30;
 
-while (aantal_te_tonen>0) {
-
-    for(let deler=2; aantal_te_tonen>0; deler++){
-        if (teller % deler ==0){
-            continue;
-        }
-        else{
-            priemgetal_lijst.push(teller);
-            aantal_te_tonen--;
-            break;
+for(let volgend_getal = 2; aantal_te_tonen>0; volgend_getal++){
+    let niet_priemgetal = false;
+    for(let deler=2; deler<volgend_getal; deler++) {
+        if(volgend_getal%deler===0) {
+            niet_priemgetal=true;
         }
     }
-    teller++;
-
-
-  /*  if (teller % deler ==0) {
-        teller++;
-        deler++;
-        continue;
+    if(niet_priemgetal===false){
+        priemgetal_lijst.push(volgend_getal);
+        aantal_te_tonen--;
     }
-    else{
-        priemgetal_lijst.push(teller);
-        teller++;
-    }*/
-} 
+}
 console.log(priemgetal_lijst);
