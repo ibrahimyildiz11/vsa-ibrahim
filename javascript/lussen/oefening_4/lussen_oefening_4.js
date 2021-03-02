@@ -8,9 +8,18 @@ let raster = [
     [" ", " ", " ", " ", " ", "\\", "_", "_", "\\"]
   ];
   
+  let uitvoer = "";
+
   // verwerking
   // feedback: dit met een for(each) lus op te lossen
-  let lijn_een = raster[0];
+  raster.forEach(function(lijn) {
+      uitvoer+= lijn.join("") + "\n"
+  });
+
+  console.log(uitvoer);
+
+
+  /*let lijn_een = raster[0];
   let lijn_twee = raster[1];
   let lijn_drie = raster[2];
   let lijn_vier = raster[3];
@@ -30,4 +39,4 @@ let raster = [
   console.log(vliegtuig_deel_drie);
   console.log(vliegtuig_deel_vier);
   console.log(vliegtuig_deel_vijf);
-  console.log(vliegtuig_deel_zes);
+  console.log(vliegtuig_deel_zes);*/
