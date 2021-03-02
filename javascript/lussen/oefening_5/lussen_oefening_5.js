@@ -6,18 +6,27 @@ let getallen_tabel = [
 ];
 
 let koppelteken = "-";
+let uitvoer = "";
 // feedback: ook hier graag een for(each) lus gebruiken
-let lijn_een = getallen_tabel[0];
+/*let lijn_een = getallen_tabel[0];
 let lijn_twee = getallen_tabel[1];
-let lijn_drie = getallen_tabel[2];
+let lijn_drie = getallen_tabel[2];*/
 
 // verwerking
 
+getallen_tabel.forEach(function(lijn){
+    uitvoer+= "|" + lijn.join("|") + "|" + "\n";
+})
+
 // uitvoer
+console.log("┌" + koppelteken.repeat(uitvoer.length/3-3) + "┐");
+console.log(uitvoer);
+console.log("└" + koppelteken.repeat(uitvoer.length/3-3) + "┘");
+
 // feedback: repeat() is goed, maar probeer 29 dynamisch te bepalen
-console.log("┌" + koppelteken.repeat(29) + "┐");
+/*console.log("┌" + koppelteken.repeat(29) + "┐");
 console.log("|" + lijn_een.join("|")+ "|");
 console.log("|" + lijn_twee.join("|")+ "|");
 console.log("|" + lijn_drie.join("|")+ "|");
 // feedback: repeat() is goed, maar probeer 29 dynamisch te bepalen
-console.log("└" + koppelteken.repeat(29) + "┘");
+console.log("└" + koppelteken.repeat(29) + "┘");*/
