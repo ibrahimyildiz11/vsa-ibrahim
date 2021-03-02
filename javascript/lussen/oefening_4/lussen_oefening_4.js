@@ -9,6 +9,7 @@ let raster = [
   ];
   
   // verwerking
+  // feedback: dit met een for(each) lus op te lossen
   let lijn_een = raster[0];
   let lijn_twee = raster[1];
   let lijn_drie = raster[2];
