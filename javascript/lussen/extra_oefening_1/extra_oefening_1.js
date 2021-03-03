@@ -1,3 +1,4 @@
+// feedback: mooi!
 
 //invoer
 let zin = prompt("Geef een zin: ");
