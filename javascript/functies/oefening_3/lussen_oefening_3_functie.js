@@ -1,4 +1,4 @@
-
+// feedback: "tonen" in een functie doet vermoeden dat je ook iets toont... 
 function priemgetalTonen(aantal_te_tonen) {
     let priemgetal_lijst = [];
     for(let volgend_getal = 2; aantal_te_tonen>0; volgend_getal++){

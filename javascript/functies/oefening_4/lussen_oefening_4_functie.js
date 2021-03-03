@@ -1,3 +1,5 @@
+// feedback: Top!
+
 // invoer
 function rasterMaker (raster) {
     let uitvoer = "";
