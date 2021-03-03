@@ -1,3 +1,4 @@
+// feedback: mooi!
 // invoer & verwerking
 
 function tabelMetGetallen(getallen_tabel){
