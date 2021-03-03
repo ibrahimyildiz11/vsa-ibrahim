@@ -1,6 +1,6 @@
 // feedback: Mooi! Best de "let een_woord = ..." onderaan zetten (net voor "uitvoer")
 //Invoer
-let een_woord = prompt("Geef een woord");
+
 
 
 //verwerking
@@ -14,7 +14,8 @@ function omgekeerdWoord (woord) {
     return omgekeerd;
 }
 
-let resultaat = omgekeerdWoord(een_woord)
+let een_woord = prompt("Geef een woord");
+let resultaat = omgekeerdWoord(een_woord);
 
 //uitvoer
 console.log(resultaat);

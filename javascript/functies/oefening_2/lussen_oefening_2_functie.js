@@ -1,7 +1,5 @@
 // feedback: mooi! Zelfde feedback als oefening 1
 // invoer
-let aantal_getallen = parseInt(prompt("Hoeveel Fibonacci getallen tonen?"));
-
 
 function aantalFibonacciGetallen (getal) {
     let lijst = [0,1];
@@ -13,6 +11,8 @@ function aantalFibonacciGetallen (getal) {
     return lijst.join();
 }
 
+
+let aantal_getallen = parseInt(prompt("Hoeveel Fibonacci getallen tonen?"));
 let resultaat = aantalFibonacciGetallen(aantal_getallen);
 
 //uitvoer
