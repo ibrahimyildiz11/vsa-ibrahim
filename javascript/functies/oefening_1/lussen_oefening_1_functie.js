@@ -1,4 +1,4 @@
-
+// feedback: Mooi! Best de "let een_woord = ..." onderaan zetten (net voor "uitvoer")
 //Invoer
 let een_woord = prompt("Geef een woord");
 
