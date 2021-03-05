@@ -1,3 +1,4 @@
+// feedback: al mooi, probeer je nog even te controlleren of een random karakter al in het paswoord zit?
 
 function paswoordMaker(tekens){
     if(tekens<4){
