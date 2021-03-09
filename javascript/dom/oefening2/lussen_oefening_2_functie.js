@@ -1,7 +1,7 @@
 
 // invoer
 
-function aantalFibonacciGetallen (getal) {
+function fibonacciGetallen (getal) {
     let lijst = [0,1];
     let afteller = 2;
     while (afteller < getal) {
@@ -14,13 +14,13 @@ function aantalFibonacciGetallen (getal) {
 function start() {
     document.getElementById("btn_getallen").addEventListener('click' , function() {
         // feedback: getal = aantal?
-        let getal = document.getElementById("getal").value;
+        let aantal = document.getElementById("getal").value;
 
         // feedback: aantal_getallen = getallen? 
         // feedback: aantalFibonacciGetallen = fibonacciGetallen?
-        let aantal_getallen = aantalFibonacciGetallen(getal);
+        let getallen = fibonacciGetallen(aantal);
 
-        document.getElementById("aantal_fibo_getallen").innerHTML = "Fibonacci getalen: " + aantal_getallen;
+        document.getElementById("aantal_fibo_getallen").innerHTML = "Fibonacci getalen: " + getallen;
     });
 }
 
