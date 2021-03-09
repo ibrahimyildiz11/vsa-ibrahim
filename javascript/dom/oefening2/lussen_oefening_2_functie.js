@@ -13,8 +13,11 @@ function aantalFibonacciGetallen (getal) {
 
 function start() {
     document.getElementById("btn_getallen").addEventListener('click' , function() {
+        // feedback: getal = aantal?
         let getal = document.getElementById("getal").value;
 
+        // feedback: aantal_getallen = getallen? 
+        // feedback: aantalFibonacciGetallen = fibonacciGetallen?
         let aantal_getallen = aantalFibonacciGetallen(getal);
 
         document.getElementById("aantal_fibo_getallen").innerHTML = "Fibonacci getalen: " + aantal_getallen;
