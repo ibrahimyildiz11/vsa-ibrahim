@@ -3,7 +3,7 @@
 window.addEventListener('load', function(){
     document.getElementById("rol_teerlingen").addEventListener('click', function() {
           let aantal = document.getElementById("aantal_teerlingen").value;
-          let teerlingen = maakTeerlingen(aantal);
+          let teerlingen = rolTeerlingen(aantal);
           document.getElementById("teerlingen").innerHTML =teerlingen; 
         });
       });
@@ -11,17 +11,17 @@ window.addEventListener('load', function(){
 
 
 
-function maakTeerlingen (aantal) {
-    let boodschap = "";
+function rolTeerlingen (aantal) {
+    let teerlingen = "";
 
     for (let teller=1; teller<=aantal; teller++) {
-        boodschap+= rolTeerlingen ();
+        teerlingen+= maakTeerling ();
     }
 
-    return boodschap;
+    return teerlingen;
 }
 
-function rolTeerlingen() {
+function maakTeerling() {
     let random_ogen = Math.floor(Math.random() * 6 + 1);
     let ogen = "";
 
