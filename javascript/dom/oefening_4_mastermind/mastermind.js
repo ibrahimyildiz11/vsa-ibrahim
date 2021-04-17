@@ -1,106 +1,87 @@
 
-let foute_pogingen = 0;
+let pogingen = 0;
+let randomGetallen = [];
+let ingevoerdeGetallen = [];
 
-let randomGetallen;
-let ingevoerdeGetallen;
-let vorige_ingevoerde_getallen = [];
-
-
-/*function start(){ 
-    spelOpnieuw();
-    //document.getElementById("controlleer").addEventListener('click', controleerPoging());
-};*/
-
-window.addEventListener('load', function(){
-    spelOpnieuw();
-    
+window.addEventListener('load', function(){    
+    spelOpnieuw();  
 });
 
 function spelOpnieuw(){
-    randomGetallen = Math.floor(Math.random() * (9999 - 1000) ) + 1000;
+    for(let teller = 0; teller < 4; teller++) {
+        let numbers = Math.floor(Math.random() * 10);
+        randomGetallen.push(numbers)};
     console.log(randomGetallen);
-    
-
-    //reset speelveld
-    document.getElementById('nieuwe_poging').innerHTML = '';
-    document.getElementById('vorige_pogingen').innerHTML = '';
-    document.getElementById('score').innerHTML = '';
-    document.getElementById('boodschap').innerHTML = '';
-
     ingevoerdeGetallen = document.getElementsByClassName("ingevoerd_getal");
-    vorige_ingevoerde_getallen = ingevoerdeGetallen;
-    console.log(ingevoerdeGetallen);
-    console.log(vorige_ingevoerde_getallen);
-    let text = '<input class="ingevoerd_getal" type="text"></input>';
+    speelVeld();
+};
+
+function speelVeld(){
+    let invoer = '<input class="ingevoerd_getal" type="text"></input>';
     let resultaat = "";
     for (let teller = 0; teller < 4; teller++) {
-         resultaat+= text;
+         resultaat+= invoer;
     }
     resultaat += '<button id="controlleer" onclick="controleerPoging()">✓</button>';
     document.getElementById('nieuwe_poging').innerHTML = resultaat;
-};
+}
 
 function controleerPoging(){
-    controleerVierGetallen(randomGetallen, ingevoerdeGetallen);
-    /*if (vierBolletjesGroen){
-        gewonnen();
-    }else if(foute_pogingen==10){
-        verloren();
-    }else{
-        foute_pogingen++;
-    }  */
-};
-
-function controleerVierGetallen(randomGetallen, ingevoerdeGetallen){
-    randomGetallen = randomGetallen.toString();
-    ingevoerdeGetallen = ingevoerdeGetallen.toString();
-    for(let teller =0;teller<4;teller++){
-        if(ingevoerdeGetallen.charAt(teller)===randomGetallen.charAt(teller)){
-            toonBolletje("groen");
-            //console.log(y.charAt(teller) + " groen")
-        }else if(ingevoerdeGetallen.includes(randomGetallen[teller])){
-            toonBolletje("rood");
-            //console.log(y.charAt(teller)+ " rood")
-        }else if(ingevoerdeGetallen.includes(randomGetallen[teller])!==true){
-            toonBolletje("grijs");
-            //console.log(y.charAt(teller)+ " grijs")
-        }  
+    let getallen = [];
+    for(let teller = 0; teller < 4; teller++) {
+        getallen.push(ingevoerdeGetallen[teller].value);
     }
-
+    getallen = getallen.map(Number);
+    controleerVierGetallen(getallen);
+    if (getallen[0]==randomGetallen[0] && getallen[1]==randomGetallen[1] && getallen[2]==randomGetallen[2] && getallen[3]==randomGetallen[3]) {
+        gewonnen();
+    }else if(pogingen==9) {
+        verloren();
+    }else {
+        pogingen++;
+    }
+    speelVeld();
+    vorigePoging(getallen);
 };
+
+function controleerVierGetallen(getallen){
+    console.log(ingevoerdeGetallen);
+    for(let teller =0;teller<4;teller++){
+        if(randomGetallen.includes(getallen[teller])){
+            if(getallen[teller]==randomGetallen[teller]){
+                toonBolletje("groen");
+            }else{
+                toonBolletje("rood");
+            }
+        }
+        else{
+            toonBolletje("grijs");
+        }
+    }
+    document.getElementById("score").innerHTML += '<br>';
+};
+function vorigePoging(getallen) {
+    let divVanVorigePoging = '<div class="vorige_poging">';
+    for (let teller = 0; teller < 4; teller++) {
+        divVanVorigePoging += '<span>'+ getallen[teller] + '</span>'
+    } 
+    divVanVorigePoging += '</div>';
+    document.getElementById('vorige_pogingen').innerHTML += divVanVorigePoging;
+}
 
 function toonBolletje(kleur){
     let bolletje = '<span class="' + kleur + '_bolletje">•</span>';
-    document.getElementById("score").innerHTML = bolletje;
-
-    /*switch(kleur) {
-        case groen:
-            bolletje+= '<span class="groen_bolletje">•</span>';
-            document.getElementById("score").innerHTML = bolletje;
-          break;
-
-        case rood:
-            bolletje += '<span class="rood_bolletje">•</span>';
-            document.getElementById("score").innerHTML = bolletje;
-          break;
-
-        case grijs:
-            bolletje += '<span class="grijs_bolletje">•</span>';
-            document.getElementById("score").innerHTML = bolletje;
-          break;
-
-        default:
-      } */
+    document.getElementById("score").innerHTML += bolletje;
 };
+
 function gewonnen(){
     document.getElementById("boodschap").innerHTML= "Proficiat, u bent gewonnen.";
     maakOnbruikbaar();
-
 };
 function verloren(){
     document.getElementById("boodschap").innerHTML= "Spijtig, u bent verloren. Correct getallen is: " + randomGetallen;
     maakOnbruikbaar();
 };
 function maakOnbruikbaar(){
-    document.getElementById("speelveld").disabled = true;
+    document.getElementById("controlleer").disabled = true;
 };
