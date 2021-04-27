@@ -1,0 +1,25 @@
+#speelveld {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+ 
+#speelveld div {
+    padding: .5rem;
+}
+
+.center {
+    text-align: center;
+}
+
+.rood {
+    color: red;
+}
+
+#speelveld span {
+    width: 20px;
+    font-size: 15px;
+    display: inline-block;
+}
