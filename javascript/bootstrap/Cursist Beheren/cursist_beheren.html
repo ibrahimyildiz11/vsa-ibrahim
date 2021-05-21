@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursisten Beheren</title>
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    
+    <!-- MDB -->
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+    ></script>
+    <script src="cursist.js"></script>
+</head>
+<body>
+    <nav class="navbar-expand-lg navbar-light bg-light mb-2">
+        <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdownMenuLink"
+                        role="button"
+                        data-mdb-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                    Beheren
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Cursist</a></li>
+                    <li><a class="dropdown-item" href="#">Adres</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="col-md-6">
+        <h1>Cursisten beheren</h1>
+    </div>
+    </header>
+    <hr>
+    <!-- Button toevoegen -->
+    <div class="col-auto">
+        <button type="button" class="btn btn-danger" id="toevoegen" data-mdb-toggle="modal" data-mdb-target="#cursistToevoegenModal"> <i class="fas fa-plus"></i> &nbsp <!--voor spatie--> toevoegen</button>
+    </div>
+    <hr>
+
+    <!-- Modal -->
+    <div
+    class="modal fade"
+    id="cursistToevoegenModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    >
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Product toevoegen</h5>
+        <button
+            type="button"
+            class="btn-close"
+            data-mdb-dismiss="modal"
+            aria-label="Close"
+        ></button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <form style="width: 30rem;">
+                    <div class="form-group">
+                        <label for="naam">Naam</label>
+                        <input type="text" name="naam" id="naam" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="adres">Adres</label>
+                        <input type="text" name="adres" id="adres" class="form-control">
+                    </div>
+                    <hr>
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+            Close
+        </button>
+        <button type="button" class="btn btn-primary" id="save" data-mdb-dismiss="modal">Save</button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <form class="row gy-2 gx-3 align-items-center">
+            <div class="col-auto">
+                <div class="form-outline">
+                    <input type="text" id="form11Example1" class="form-control" />
+                    <label class="form-label" for="form11Example1">Naam</label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-outline">
+                    <label for="adres"><li>Adres</li></label>
+                    <select name="adres" id="adres">
+                        <option value="leuven">Leuven</option>
+                        <option value="limburg">Limburg</option>
+                        <option value="antwerpen">Antwerpen</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <section class="border p-4 mb-4">
+        <div id="datatable-custom" data-mdb-hover="true" class="datatable datatable-hover" style="justify-content: center;" >
+            <div class="datatable-inner table-responsive ps ps--active-y" style="overflow: auto; position: relative;">
+                <table class="table datatable-table">
+                    <thead class="datatable-header">
+                        <tr>
+                            <th style="cursor: pointer;" scope="col"><i data-mdb-sort="naam" class="datatable-sort-icon fas fa-arrow-up"></i> Naam</th>
+                            <th style="cursor: pointer;" scope="col"><i data-mdb-sort="adres" class="datatable-sort-icon fas fa-arrow-up"></i> Adres</th>
+                            <th style="" scope="col"> Actie</th>
+                        </tr>
+                    </thead>
+                    <tbody class="datatable-body" id="cursist">
+                        <tr scope="row" data-mdb-index="0">
+                            <td style="" class="" data-mdb-field="naam" false="">Jan</td>
+                            <td style="" class="" data-mdb-field="adres" false="">Limburg</td>
+
+                            <td style="" class="" data-mdb-field="contact" false="">
+                                <button type="button" class="btn" data-mdb-toggle="modal" data-mdb-target="#cursistModal">
+                                    <i class="fas fa-edit" aria-hidden="true"></i>
+                                </button>
+                                <!-- Modal wijzigen-->
+                                <div class="modal fade" id="cursistModal" tabindex="-1" aria-labelledby="cursistModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="cursistModalLabel">Cursist wijzigen</h5>
+                                                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>                                        </div>
+                                                <div class="modal-body">
+                                                <div class="form-group">
+                                                    <form style="width: 30rem;">
+                                                        <div class="form-group">
+                                                            <label for="naam">Naam</label>
+                                                            <input type="text" name="naam" id="cursistNaam" class="form-control">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="adres">Adres</label>
+                                                            <input type="text" name="adres" id="cursistAdres" class="form-control">
+                                                        </div>
+                                                        <hr>
+                                                    </form>
+                                                </div>
+                                            </div>
+        
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Annuleren</button>
+                                                <button type="button" class="btn btn-primary">Bewaren</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#cursistVerwijderenModal">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                  
+                                <!-- Modal verwijderen-->
+                                <div class="modal fade" id="cursistVerwijderenModal" tabindex="-1" aria-labelledby="cursistModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="cursistModalLabel">Cursist verwijderen</h5>
+                                                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">Wil u het cursist "" verwijderen?</div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Annuleren</button>
+                                                <button type="button" class="btn btn-primary">Verwijderen</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        
+                        </tr>       
+                    </tbody>
+                </table>
+
+                <!--Pagination-->
+                <nav aria-label="...">
+                    <ul class="pagination pagination-circle">
+                    <li class="page-item">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                    </ul>
+                </nav> 
+            </div>
+        </div>
+    </section>
+</body>
+</html>
