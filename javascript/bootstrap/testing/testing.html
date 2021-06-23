@@ -26,8 +26,7 @@
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
     ></script>
-    <script src="cursist_beheren.js"></script>
-    <script src="dwapi.js"></script>
+    <script src="testing.js"></script>
 </head>
 <body>
     <nav class="navbar-expand-lg navbar-light bg-light mb-2">
@@ -74,7 +73,7 @@
     <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Cursist toevoegen</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Product toevoegen</h5>
         <button
             type="button"
             class="btn-close"
@@ -99,15 +98,14 @@
         </div>
         <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-            Annuleren
+            Close
         </button>
-        <button type="button" class="btn btn-primary" id="save" data-mdb-dismiss="modal">Bewaren</button>
+        <button type="button" class="btn btn-primary" id="save" data-mdb-dismiss="modal">Save</button>
         </div>
     </div>
     </div>
     </div>
 
-    <!--FILTER & RESET-->
     <div class="container">
         <form class="row gy-2 gx-3 align-items-center">
             <div class="col-auto">
@@ -136,15 +134,14 @@
         </form>
     </div>
 
-    <!--FORM TABEL-->
     <section class="border p-4 mb-4">
         <div id="datatable-custom" data-mdb-hover="true" class="datatable datatable-hover" style="justify-content: center;" >
             <div class="datatable-inner table-responsive ps ps--active-y" style="overflow: auto; position: relative;">
                 <table class="table datatable-table">
                     <thead class="datatable-header">
-                        <tr id="hofdrij">
-                            <th scope="col"><a class="link-cursisten-sorteren" id="link_sorteer_op_naam" data-sorteer-op="naam" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i> Naam</a></th>
-                            <th scope="col"><a class="link-cursisten-sorteren" id="link_sorteer_op_adres" data-sorteer-op="adres" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i> Adres</a></th>
+                        <tr>
+                            <th style="cursor: pointer;" scope="col"><i data-mdb-sort="naam" class="datatable-sort-icon fas fa-arrow-up"></i> Naam</th>
+                            <th style="cursor: pointer;" scope="col"><i data-mdb-sort="adres" class="datatable-sort-icon fas fa-arrow-up"></i> Adres</th>
                             <th style="" scope="col"> Actie</th>
                         </tr>
                     </thead>
@@ -152,12 +149,10 @@
                         <tr scope="row" data-mdb-index="0">
                             <td style="" class="" data-mdb-field="naam" false="">Jan</td>
                             <td style="" class="" data-mdb-field="adres" false="">Limburg</td>
-                            
-                            
-                            <td class="" data-mdb-field="" false="">
-                                <!--BUTON Wijzigen-->
-                                <button type='button' class='btn' data-mdb-toggle='modal' data-mdb-target='#cursistModal'>
-                                    <i class='fas fa-edit' aria-hidden='true'></i>
+
+                            <td style="" class="" data-mdb-field="contact" false="">
+                                <button type="button" class="btn" data-mdb-toggle="modal" data-mdb-target="#cursistModal">
+                                    <i class="fas fa-edit" aria-hidden="true"></i>
                                 </button>
                                 <!-- Modal wijzigen-->
                                 <div class="modal fade" id="cursistModal" tabindex="-1" aria-labelledby="cursistModalLabel" aria-hidden="true">
@@ -165,7 +160,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="cursistModalLabel">Cursist wijzigen</h5>
-                                                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                                                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>                                        </div>
                                                 <div class="modal-body">
                                                 <div class="form-group">
                                                     <form style="width: 30rem;">
@@ -195,11 +190,11 @@
                                 </button>
                   
                                 <!-- Modal verwijderen-->
-                                <div class="modal fade" id="cursistVerwijderenModal" tabindex="-1" aria-labelledby="cursistModalLabelVerwijderen" aria-hidden="true">
+                                <div class="modal fade" id="cursistVerwijderenModal" tabindex="-1" aria-labelledby="cursistModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="cursistModalLabelVerwijderen">Cursist verwijderen</h5>
+                                                <h5 class="modal-title" id="cursistModalLabel">Cursist verwijderen</h5>
                                                 <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">Wil u het cursist "" verwijderen?</div>

@@ -1,6 +1,6 @@
 //invoer
 
-let graad = parseInt(prompt("Hoevel graden?"))
+let graad = parseInt(prompt("Hoevel graden?"));
 
 
 //verwerking

@@ -39,7 +39,7 @@ function startSpel(){
     //om eerste cijfer te tonen
     document.getElementById("cijfer_1").innerHTML = randomGetallen[0];
 
-    //om te controleeren
+    //om te contreleeren
     console.log(minimumGetal);
     console.log(maximumGetal);
 };

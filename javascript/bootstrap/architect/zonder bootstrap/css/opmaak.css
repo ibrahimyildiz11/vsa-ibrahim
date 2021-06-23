@@ -1,0 +1,256 @@
+@charset "UTF-8";
+@import "reset.css";
+@import "https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:400,700";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+html, body { height: 100%; }
+
+body {
+    font: 400 100%/1.8 Roboto, Times, serif;
+    background: white;
+    color: #848484;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* Header ---------------------------------------------------------- */
+
+header {
+    position: relative;
+    height: 100vh;
+    background: black url(../images/header-bg-tablet.jpg) no-repeat center/cover fixed;
+}
+
+header nav {
+    background: #F6F6F6;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    /* height: 108px;
+    overflow: hidden; */
+}
+
+header nav section {
+    display: flex;
+    padding: 30px;
+    height: 110px;
+}
+
+header nav ul {
+    display: none;
+}
+
+p.logo { margin: 0; }
+
+p.logo a {
+    font: 700 1.8em/1.8 'Roboto Slab', Times, serif;
+    text-transform: uppercase;
+    color: #181818;
+}
+
+p.logo a::before {
+    font-family: FontAwesome;
+    content: '\F19C';
+    color: rgb(227, 117, 27);
+    padding-right: .3em;
+}
+
+.hamburger {
+    position: absolute;
+    top: 3px;
+    right: 30px;
+    font-size: 1.8em;
+}
+
+.hamburger a { color: #181818; }
+
+header article.popup {
+    background: rgb(227, 117, 27);
+    position: absolute;
+    bottom: 30px;
+    padding: 2em;
+    color: #F1F1F1;
+    margin: 0 30px;
+}
+
+header article.popup h1 { font: 300 2em/1.2 'Roboto Slab', Times, serif; }
+
+header article.popup a {
+    display: inline-block;
+    padding: 1em;
+    margin-top: 1.6em;
+    border: 1px solid #CECFD1;
+    border-radius: 2px;
+    color: #F1F1F1;
+    font-size: .8em;
+    text-transform: uppercase;
+    letter-spacing:  4px;
+}
+
+/* Main ------------------------------------------------------------ */
+
+main figure {
+    position: relative;
+    font: 400 1.6em/1.8 'Roboto Slab', Times, serif;
+    color: #F1F1F1;
+    text-shadow: 1px 1px 2px rgba(150, 150, 150, 1); 
+}
+
+main figure img { width: 100%; }
+
+main figcaption {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -.9em;
+    width: 100%;
+    text-align: center;
+}
+
+main a:hover { text-decoration: none; } 
+
+/* Footer ---------------------------------------------------------- */
+
+footer { background: rgb(31, 39, 49); }
+
+footer section { padding: 30px; }
+
+footer h2 {
+    font: 400 1.2em/110px 'Roboto Slab', Times, serif;
+    color: #CECFD1;
+}
+
+footer p { margin-top: 0; }
+
+footer a { color: #848484; }
+
+footer a:hover {
+    color: rgb(227, 117, 27);
+    text-decoration:  none;
+}
+
+footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer ul li::before {
+    font-family: FontAwesome;
+    color: #CECFD1;
+    display: inline-block;
+    width: 30px;
+    font-size: 1.2em;
+}
+
+footer ul li.adres::before { content: '\F041'; }
+footer ul li.tel::before { content: '\F095'; }
+footer ul li.email::before { content: '\F003'; }
+footer ul li.website::before { content: '\F0AC'; }
+
+footer section:nth-of-type(1) { border-bottom: 1px solid rgba(255, 255, 255, .1); }
+
+footer section:nth-of-type(2) { 
+    text-align: center; 
+    color: rgba(255, 255, 255, .3);
+}
+
+footer section:nth-of-type(2) span { 
+    font-size: 1.6em; 
+    padding: 0 10px 20px;
+}
+
+/* Footer formulier ------------------------------------------------ */
+
+footer form { 
+    position: relative;
+    overflow: hidden; 
+}
+
+footer form li { padding-bottom: 1em; }
+
+footer form label { 
+    position: absolute;
+    top: -80px;
+}
+
+footer form input[type=text],
+footer form input[type=email],
+footer form textarea {
+    background: rgb(27, 32, 39);
+    border: none;
+    padding: 1em;
+    width: 100%;
+    font-size: 1em;
+    color: #CECFD1;
+}
+
+footer form input[type=text]:focus,
+footer form input[type=email]:focus,
+footer form textarea:focus {
+    background: rgb(204, 204, 204);
+}
+
+footer form textarea { min-height: 200px; }
+
+footer form input[type=submit] {
+    background: rgb(227, 117, 27);
+    border: none;
+    border-radius: 4px;
+    padding: 1em;
+    font-size: 1em;
+    color: #CECFD1;
+}
+
+/* Media Queries --------------------------------------------------- */
+
+@media screen and (min-width: 900px) {
+    header nav section {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 46px;
+    }
+    
+    header nav .logo { padding-top: 30px; }
+
+    header nav ul { display: flex; }
+    
+    header nav ul a {
+        display: inline-block;
+        font: 400 1.1em/110px 'Roboto Slab', Times, serif;
+        text-transform: uppercase;
+        padding: 0 1em;
+        color: #181818;
+    }
+    
+    header nav a:hover { text-decoration: none; }
+    
+    header nav ul a:hover, header nav ul li.actief a { background: #EEE; }
+    
+    .hamburger { display: none; }
+    
+    header article.popup { max-width: 360px; }
+    
+    main { display: flex; }
+    
+    main a {width: calc(100% / 3); }
+    
+    footer section:nth-of-type(1) {
+        display: flex;
+        justify-content: space-between;
+        padding: 4em 0;
+    }
+    
+    footer section:nth-of-type(2) {
+        padding: 4em 0;
+    }
+    
+    footer section article { width: 22%; }
+}
+
+@media screen and (min-width: 1140px) {
+    header { background: black url(../images/header-bg.jpg) no-repeat center/cover fixed; }
+}

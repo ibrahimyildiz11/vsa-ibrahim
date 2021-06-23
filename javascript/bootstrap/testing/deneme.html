@@ -1,0 +1,33 @@
+<form id="form_registratie">
+    <input type="email" required placeholder="uw email" />
+    <input type="text" required placeholder="uw naam"/>
+    <button id="button_verstuur">verstuur</button>
+</form>
+
+<form id="form_product">
+    <div class="form-group mb-4">
+       <label class="form-label" for="input_product_naam">Naam</label>
+       <input required type="text" id="input_product_naam" class="form-control" />
+       <div class="invalid-feedback">Een naam is verplicht.</div>
+    </div>
+ </form>
+<script>
+    window.onload = function(){
+        document.getElementById("button_verstuur").addEventListener('click', function() {
+            verstuurRegistratie();
+        })
+    }
+    function verstuurRegistratie() {
+        let form_registratie = document.getElementById("form_registratie");
+        if (form_registratie.checkValidity()) {
+            alert("Klaar om te versturen.");
+        }
+        else {
+            alert("Nog niet klaar om te versturen.");
+        }
+    }
+
+    form_product = document.getElementById("form_product");
+    form_product.checkValidity();
+    form_product.classList.add('was-validated');
+</script>

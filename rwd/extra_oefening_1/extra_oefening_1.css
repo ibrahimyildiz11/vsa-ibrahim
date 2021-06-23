@@ -2,10 +2,18 @@
     box-sizing: border-box;
 }
 
+body {
+    /*margin: 0;*/
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 header a {
     display: flex;
     justify-content: center;
-
 }
 
 header nav ul { 
@@ -16,16 +24,13 @@ header nav ul {
 }
 
 header nav ul li { 
-  list-style: none;
-  padding: 8px;
-  margin-bottom: 7px;
-  background-color: #707d81;
-  color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 10px;
+  text-align: center;
+  background-image: linear-gradient(#404040, #0d0d0d);
 }
 
-header nav ul li:hover {
-    background-color: #0099cc;
+nav li:hover {
+    background-image: linear-gradient( #1ac7d3, #6d706b);
   }
 
 header nav ul li a {
@@ -34,62 +39,122 @@ header nav ul li a {
 }
 
 .hero-image {
-    background-image: url("images/corporate-image.jpg"); 
-    width: 2em;
-    background-color: #cccccc; 
+    background-image: url("images/corporate-image.jpg");
+    background-color: #cccccc;
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover; 
     width: 100%;
+    height: 300px;
 }
 
-.welkom-section article h1,h2 {
-    color: teal;
+.hero-image small {
+    font-style: italic;
+    font-size: 2em;
+    color: green;
+}
+.hero-image p {
+    font-size: 3em;
+    color: white;
+}
+.hero-image small,p {
+    font-weight: bold;
+    position: absolute;
+    padding-top: 20%;
+    padding-left: 0;
+}
+
+article p {
+    font-weight:normal;
+    margin: 2px;
+    padding: 2px;
+    position:static;
+
+}
+
+div img {
+    width: 100%;
+}
+
+aside {
+    background-color: #f2f2f2;
 }
 
 aside ul {
     list-style: none;
-    width: 100%;
 }
 
 aside h2 {
     text-transform: uppercase;
 }
-aside ul li {
-    width: 100%;
-    background-color: thistle;
-
-    margin: 2px 0;
+aside li {
+    padding: 10px;
+    border-bottom: 1px solid #adadad;
 }
 
 aside ul li span {
     display: block;
-    
 
 }
 
-aside ul li :first-child {
-    font-size: 20px;
+.fas, span a {
+    color: green;
+    text-decoration: none;
 }
 
 footer {
+    text-align: center;
     background: grey;
-    width: 100%;
-    height: 80px;
+    padding: 20px;
     
 }
 
 /*Tablet*/
 @media (min-width: 500px) and (max-width: 1000px) {
 
-    main{
-       width: 100%;
-       display: flex;
-       flex-wrap: wrap;
+    nav ul {
+        display: flex;
+        justify-content: center;
+        padding: 1em 0;
     }
-    main aside,section{
-        width: 40%;
+
+    nav ul li {
+        background-image: linear-gradient(#f2f2f2, #f2f2f2);
     }
+
+    nav a {
+        color: black;
+        padding: 5px;
+    }
+
+    main section {
+        width: 90%;
+        max-width: 900px; 
+        margin: auto;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .flex-container > article {
+        padding: 5px;
+    }
+
+    .artikel-welkom {
+        flex: 40%;
+    }
+
+    .artikel-diensten {
+        width: 80%;
+        margin-top: 40px;
+    }
+
+    .flex-container img {
+        width: 100%;
+    }
+
+
  }
 
 /*Desktopt*/

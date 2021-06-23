@@ -5,7 +5,7 @@ let jaar = datum.getFullYear();
 
 window.onload = function(){
     document.getElementById("vorige_maand").addEventListener('click', naarVorigeMaand);
-document.getElementById("volgende_maand").addEventListener('click', naarVolgendeMaand);
+    document.getElementById("volgende_maand").addEventListener('click', naarVolgendeMaand);
     toonMaand();
     };
 
@@ -25,7 +25,7 @@ function toonDagen() {
 let dag="";
     let aantalDagen = new Date(datum.getFullYear(), datum.getMonth()+1,0).getDate();
     for(let teller=1; teller<=aantalDagen; teller++) {
-        if (teller === new Date ().getDate && datum.getMonth === new Date().getMonth()) {
+        if (teller === new Date ().getDate() && datum.getMonth === new Date().getMonth()) {
             dag += '<span class="vandaag">' +teller+'</span>';
         }
         else{
@@ -39,7 +39,7 @@ return dag;
 function naarVolgendeMaand(){
 
     let volgende_maand=datum.getMonth();
-let volgende_jaar=datum.getFullYear();
+    let volgende_jaar=datum.getFullYear();
     if (volgende_maand==11){
         volgende_maand=0;
         volgende_jaar+=1;

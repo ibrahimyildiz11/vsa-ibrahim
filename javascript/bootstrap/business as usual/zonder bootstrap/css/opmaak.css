@@ -1,0 +1,308 @@
+@import "reset.css";
+@import "https://fonts.googleapis.com/css?family=Lato:300,400,700";
+@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";  
+
+body {
+    font: 300 100%/1.4 Lato, Tahoma, sans-serif;
+    background: white;
+    color: #666;
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+h1, h2 { 
+    font-size: 1.4em;
+    text-transform: uppercase;
+}
+
+/* --------- Header --------- */
+
+header {
+	padding: 20px 0 0;
+	background: #FFF;
+	text-align: center;
+}
+
+.logo { margin-bottom: 20px; }
+
+/* --------- Nav --------- */
+
+a { 
+	color: #7DBF29; 
+	text-decoration: none; 
+}
+
+a:hover { text-decoration: underline; }
+
+nav { background: #999; }
+
+nav a {
+	display: block;
+	background: rgb(110, 110, 110);
+	background: -webkit-linear-gradient(90deg, rgb(110, 110, 110) 0%, rgb(82, 82, 82) 100%);
+	background: -o-linear-gradient(90deg, rgb(110, 110, 110) 0%, rgb(82, 82, 82) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(110, 110, 110)), to(rgb(82, 82, 82)));
+	background: -webkit-linear-gradient(top, rgb(110, 110, 110) 0%, rgb(82, 82, 82) 100%);
+	background: -o-linear-gradient(top, rgb(110, 110, 110) 0%, rgb(82, 82, 82) 100%);
+	background: linear-gradient(180deg, rgb(110, 110, 110) 0%, rgb(82, 82, 82) 100%);
+	border-bottom: 1px solid #333;
+	color: #DDD;
+	padding: 1em 0;
+	font-size: 1.1em;
+	text-align: center;
+}
+
+nav a:hover { 	
+	background: rgb(125, 191, 44);
+	background: -webkit-linear-gradient(90deg, rgb(125, 191, 44) 0%, rgb(0, 156, 28) 100%);
+	background: -o-linear-gradient(90deg, rgb(125, 191, 44) 0%, rgb(0, 156, 28) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, from(rgb(125, 191, 44)), to(rgb(0, 156, 28)));
+	background: -webkit-linear-gradient(top, rgb(125, 191, 44) 0%, rgb(0, 156, 28) 100%);
+	background: -o-linear-gradient(top, rgb(125, 191, 44) 0%, rgb(0, 156, 28) 100%);
+	background: linear-gradient(180deg, rgb(125, 191, 44) 0%, rgb(0, 156, 28) 100%);
+	text-decoration: none;
+}
+
+nav a:hover::before {
+    font-family: FontAwesome;
+    content: "\f0a9";
+    padding-right: 6px;
+}
+
+/* --------- Hero-area --------- */
+
+section#hero { background: #666 url(../images/corporate-image.jpg) center/cover; }
+
+section#hero div { 
+    height: 300px;
+    position: relative; /* voor article */
+}
+
+section#hero article { 
+    position: absolute; /* article absolute positioneren om tekst onderaan in section te zetten */
+    left: 30px;
+    bottom: 50px;
+}
+
+section#hero small {
+    font: italic 400 1.6em/1 Lato, Tahoma, sans-serif;
+    color: rgb(125, 191, 44);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, .2);
+    margin: 0;
+    padding-left: 4px;
+}
+
+section#hero p {
+    font: 400 2.8em/1 Lato, Tahoma, sans-serif;
+    color: white;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 1);
+    margin: 0;
+}
+
+/* --------- Main --------- */
+
+main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse; /* Nieuws onder maincontent zetten */
+}
+
+/* --------- Aside --------- */
+
+aside {
+	background: #EEE;
+	min-height: 200px;
+	padding: 20px;
+}
+
+aside ul {
+	list-style-type: none;
+	margin: 0;
+	padding:0;
+}
+
+aside li {
+	padding: 1.3em 0;
+	border-bottom: 1px dotted #999;
+}
+
+aside li:last-of-type { 
+    border: 0; 
+    padding-bottom: 0;
+}
+
+span { display: block; }
+
+.datum { font-weight: bold; }
+
+.leesmeer { 
+    margin-top: .2em; 
+    text-align: right;
+}
+
+.leesmeer a::before {
+    font-family: FontAwesome;
+    content: "\f0a9";
+    padding-right: 6px;
+}
+
+/* --------- Section --------- */
+
+main section {
+	min-height: 200px;
+	padding: 40px;
+}
+
+main section h1 { 
+	font-size: 1.2em;
+	margin-bottom: 1.3em;
+}
+
+main section h2 { 
+	font-size: 1.2em;
+	margin: 2em 0 1.3em;
+}
+
+main section img {
+	margin-bottom: .5em;
+	padding: .5em;
+	border: 1px solid #000;
+	background: #DDD;
+    width: 100%;
+}
+
+/* --------- Footer --------- */
+
+footer {
+	height: 60px;
+	background: #CCC;
+	padding: 20px;
+	font-size: .9em;
+	text-align: center;
+}
+
+/* ---Breakpoint op 740px omdat navigatie niet naast logo past ---------
+------------------------------------------------------------------------ */
+
+@media screen and (min-width: 740px) {
+    
+    /* --------- Header --------- */
+    
+    .logo { margin-bottom: 0; }
+    
+    /* --------- Nav --------- */
+    
+    nav { 
+        background: none; 
+        margin: 0 0 30px;
+    }
+    
+    nav ul { text-align: center; }
+    
+    nav ul li { 
+        display: inline; 
+        border-left: 1px solid #666;
+    }
+    
+    nav ul li:first-child { border: 0; }
+    
+    nav ul li a { 
+        display: inline-block; 
+        background: none;
+        border-bottom: 0;
+        color: #666;
+        padding: 1em .5em 0;
+    }
+    
+    nav ul li a:hover, nav ul li.actief a {
+        background: none;
+        color: rgb(125, 191, 44);
+    }
+    
+    nav ul li a:hover::before { content: none; }
+    
+    /* --------- Section --------- */
+    
+    section#content article img {
+        width: 240px;
+        margin-right: 20px;
+    }
+    
+    section#content .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; /* image naast paragraaf zetten */
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start; /* inhoud bovenaan flexcontainer zetten */
+    }
+    
+    .leesmeer { text-align: left; }
+}
+
+/* --------- Breakpoint op 1000px ---------
+------------------------------------------ */
+
+@media screen and (min-width: 1000px) {
+    
+    /* --------- Header --------- */
+    
+    header {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; /* logo naast navigatie */
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between; /* navigatie rechts zetten in flexcontainer */
+        padding: 20px 30px;
+    }
+    
+    /* --------- Nav --------- */
+    
+    nav ul li a { padding-top: 1.5em; }
+
+    section#hero small { font: italic 400 1.8em/1 Lato, Tahoma, sans-serif; }
+
+    section#hero p { font: 400 4em/1 Lato, Tahoma, sans-serif;}
+    
+    /* --------- Main --------- */
+    
+    main {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row; /* column-reverse moet row worden */
+    }
+    
+    /* --------- Aside --------- */
+    
+    aside { 
+        width: 30%;
+        padding: 20px; 
+    }
+    
+    /* --------- Section --------- */
+    
+    section#content { width: 70%; }
+    
+    .leesmeer { text-align: right; }
+    
+    /* --------- Footer --------- */
+    
+    footer { text-align: left; }
+}
+
+
+
+
+
+
+
+

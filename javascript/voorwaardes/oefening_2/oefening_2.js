@@ -2,10 +2,7 @@
 //invoer
 let getal = parseInt(prompt("Geef een getal: "));
 
-
-
 //verwerking
-
 
 // feedback: deze is goed, ik zou hier wel meteen de variabele "berichtje" een waarde geven
 let berichtje = "";

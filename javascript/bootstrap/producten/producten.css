@@ -1,0 +1,15 @@
+#tabel_producten img {
+    max-width: 150px;
+}
+
+.note-danger {
+    margin-bottom: 1rem;
+}
+
+.invisible {
+    display: none!important;
+}
+
+.visible {
+    display: block!important;
+}

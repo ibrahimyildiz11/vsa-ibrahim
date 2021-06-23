@@ -1,2 +1,0 @@
-Dit is de eerste GIT test.
-Dit is de tweede GIT test.

@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 75%;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+    background: darkcyan;
+}
+.box{
+    text-align: center;
+    border: 1px solid blanchedalmond;
+}
+
+header{
+    background: chocolate;
+    text-align: center;
+}
+
+#list{
+    display: flex;
+    margin: 20px;
+    padding: 20px;
+    justify-content: space-evenly;
+    background: darkolivegreen;
+    
+}
+.li{
+    margin: 5px;
+    padding: 5px;
+    background-color: darkorange;
+    border: 1px solid blanchedalmond;
+}

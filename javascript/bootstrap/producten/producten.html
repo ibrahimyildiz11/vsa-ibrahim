@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
+    <link href="producten.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./dwapi.js"></script>
+    <script type="text/javascript" src="producten.js"></script>
+    <title>Producten beheren</title>
+</head>
+<body>
+    <header class="container">
+        <nav class="navbar-expand-lg navbar-light bg-light mb-2">
+            <div class="container-fluid">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                    Beheren
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="#">Producten</a></li>
+                    <li><a class="dropdown-item" href="#">Bestelingen</a></li>
+                </ul>
+                </li>
+            </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="col-md px-1">
+                <h1>Producten beheren</h1>
+            </div>
+        </div>
+        <div class="container p-4">
+            <button 
+            
+            id="button_product_toevoegen"
+            type="button" 
+            class="btn btn-outline-primary button-toon-product-modal" 
+            data-mdb-toggle="modal" 
+            data-mdb-target="#modal_product"        
+            data-product-actie="create"
+            >
+            + Product
+            </button>
+            
+        </div>
+    </header>
+    
+    <section class="container">
+        <div class="row p-3">
+            <div class="col-md-2">
+                <input id="input_filter_naam" type="search" class="form-control rounded" placeholder="Naam" aria-label="Search" aria-describedby="search-addon" />
+            </div>
+            <div class="col-md-2">
+                <select id="select_filter_categorie" class="form-control select-input rounded">
+                    <option value="" selected>alle</option>                    
+                  </select>
+            </div>
+            <div id="div_check_filter_in_voorraad" class="col-md-2 d-flex align-items-end justify-content-center">
+                <div class="form-check">
+                    <input disabled class="form-check-input" type="checkbox" value="" id="check_filter_in_voorraad"/>
+                    <label class="form-check-label" for="flexCheckDefault">
+                      In voorraad
+                    </label>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <button type="button" id="button_producten_filteren" class="btn btn-outline-primary">Filter</button>
+                <button type="button" id="button_producten_filteren_reset" class="btn btn-outline-dark">Reset</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="container p-4 mb-4">
+        <div class="datatable">
+            <table class="table datatable-table">
+                <thead class="datatable-header">
+                    <tr id="hoofdrij">
+                        <th scope="col"><a class="link-producten-sorteren" id="link_sorteer_op_naam" data-sorteer-op="naam" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i> Naam</a></th>
+                        <th scope="col"><a class="link-producten-sorteren" id="link_sorteer_op_prijs" data-sorteer-op="prijs" href="#"><i id="sort-col-1" class="datatable-sort-icon fas"></i> Prijs</a></th>
+                        <th scope="col"> Categorie</th>  
+                        <th scope="col"> Beeld</th>                    
+                        <th scope="col"> Actie</th>
+                    </tr>
+                </thead>
+                <tbody class="datatable-body" id="tabel_producten">
+
+                    
+                </tbody>
+        
+            </table>
+
+        </div>
+    </section>
+
+     
+
+    <!-- Modals -->
+
+    <div
+    class="modal fade"
+    id="modal_product"
+    tabindex="-1"
+    aria-labelledby="modal_product"
+    aria-hidden="true"        
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modal_product_titel" class="modal-title">Product</h5>
+                    <button
+                    type="button"
+                    class="btn-close"
+                    data-mdb-dismiss="modal"
+                    aria-label="Close"
+                    >
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label id="label_product_fout" class="note note-danger invisible"></label>
+                    <form class="row g-3 needs-validation" id="form_product" novalidate>    
+                        <!-- Naam input -->
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_product_naam">Naam</label>
+                            <input required type="text" id="input_product_naam" class="form-control" />
+                            <div class="invalid-feedback">Een naam is verplicht.</div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_product_omschrijving">Omschrijving</label>
+                            <textarea id="input_product_omschrijving" class="form-control" rows="4"></textarea>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="input_product_prijs">Prijs</label>
+                            <div class="input-group">
+                                <div class="input-group-text">€</div>
+                                <input required type="number" min="1" id="input_product_prijs" class="form-control" />
+                                <div class="invalid-feedback">Een prijs is verplicht en minimum 1.</div>
+                            </div>                            
+                        </div>
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="select_product_categorie">Categorie</label>
+                            <select required id="select_product_categorie" class="form-control select-input rounded">
+                                <option></option>
+                            </select>    
+                            <div class="invalid-feedback">Een categorie is verplicht.</div>                            
+                        </div>
+                        
+                        <div class="form-group mb-4 form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="check_product_in_voorraad" />
+                            <label class="form-check-label" for="check_product_in_voorraad">in voorraad</label>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label data-error="wrong" data-success="right" for="input_product_beeld">Beeld</label>
+                            <div class="custom-file">
+                                <input type="hidden" id="input_product_beeld_origineel" />
+                                <input type="file" id="input_product_beeld" aria-describedby="update_beeld">
+                                <label class="custom-file-label" id="label_product_beeld" for="product_beeld">Kies (nieuw) beeld</label>
+                            </div>
+                        </div>
+                        <!-- Submit button -->
+                        <div class="form-outline mb-4">
+                            <button 
+                            id="button_product_bewaren" 
+                            class="btn btn-outline-primary">Bewaren</button>
+                            <button 
+                            type="button" 
+                            class="btn btn-outline-dark" 
+                            data-mdb-dismiss="modal">Annuleren</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+    class="modal fade"
+    id="modal_product_verwijderen"
+    tabindex="-1"
+    aria-labelledby="modal_product_verwijderen"
+    aria-hidden="true"
+    >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Product verwijderen</h5>
+                    <button
+                    type="button"
+                    class="btn-close"
+                    data-mdb-dismiss="modal"
+                    aria-label="Close"
+                    >
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label id="label_product_verwijderen_fout" class="note note-danger invisible"></label>
+                    <label class="form-outline mb-4" id="label_product_verwijderen"> </label>
+                                            
+                    <div class="form-outline mb-4">
+                        <button 
+                        type="button" 
+                        id="button_product_verwijderen" 
+                        class="btn btn-outline-primary">Verwijderen</button>
+                        <button 
+                        type="button" 
+                        class="btn btn-outline-dark" 
+                        data-mdb-dismiss="modal">Annuleren</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
